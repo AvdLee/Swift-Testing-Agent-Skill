@@ -1,0 +1,54 @@
+{
+ "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/marketplace/marketplace.schema.json",
+ "name": "swift-testing-agent-skill",
+ "version": "1.0.0",
+ "owner": {
+ "name": "Antoine van der Lee",
+ "email": "contact@avanderlee.com"
+ },
+ "metadata": {
+ "description": "Expert Swift Testing guidance for modern test architecture, diagnostics, parameterization, tags, and pragmatic XCTest migration."
+ },
+ "plugins": [
+ {
+ "name": "swift-testing",
+ "description": "Expert Swift Testing guidance for #expect/#require macros, traits and tags, parameterized tests, async testing patterns, parallel execution, and XCTest migration workflows.",
+ "repository": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
+ "version": "1.0.0",
+ "author": {
+ "name": "Antoine van der Lee",
+ "email": "contact@avanderlee.com"
+ },
+ "license": "MIT",
+ "category": "development",
+ "keywords": [
+ "swift",
+ "swift-testing",
+ "xctest",
+ "testing",
+ "unit-testing",
+ "parameterized-tests",
+ "traits",
+ "tags",
+ "parallel-testing",
+ "async-await",
+ "xcode",
+ "ios",
+ "macos",
+ "apple"
+ ],
+ "tags": [
+ "swift",
+ "swift-testing",
+ "testing",
+ "xctest",
+ "apple-platforms"
+ ],
+ "source": "./",
+ "skills": [
+ "./swift-testing"
+ ],
+ "strict": false
+ }
+ ]
+}
