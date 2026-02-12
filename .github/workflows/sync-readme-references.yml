@@ -1,40 +1,40 @@
 name: Sync README reference structure
 
 on:
- pull_request:
- paths:
- - "swift-testing-expert/references/**"
+  pull_request:
+    paths:
+      - "swift-testing-expert/references/**"
 
 jobs:
- sync-readme:
- if: github.event.pull_request.head.repo.full_name == github.repository
- runs-on: ubuntu-latest
- permissions:
- contents: write
- steps:
- - name: Checkout
- uses: actions/checkout@v4
- with:
- ref: ${{ github.head_ref }}
+  sync-readme:
+    # Same-repo PRs only: allow the workflow to auto-sync and push README updates.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
- - name: Setup Node
- uses: actions/setup-node@v4
- with:
- node-version: "20"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
- - name: Sync README structure
- run: node .github/scripts/sync-readme.js
+      - name: Sync README structure
+        run: node .github/scripts/sync-readme.js
 
- - name: Commit README update
- run: |
- if git diff --quiet README.md; then
- echo "README is up to date."
- exit 0
- fi
+      - name: Commit README update
+        run: |
+          if git diff --quiet README.md; then
+            echo "README is up to date."
+            exit 0
+          fi
 
- git config user.name "github-actions[bot]"
- git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
- git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
- git add README.md
- git commit -m "chore: sync README references [skip ci]"
- git push
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: sync README references [skip ci]"
+          git push

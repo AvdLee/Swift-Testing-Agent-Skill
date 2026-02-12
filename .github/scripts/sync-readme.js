@@ -20,7 +20,7 @@ const existingBlock = readme.slice(startIndex + startMarker.length, endIndex);
 const descriptions = new Map();
 
 for (const line of existingBlock.split("\n")) {
- const match = line.match(/^\s+([a-z0-9-]+\.md)\s+-\s+(.*)$/i);
+ const match = line.match(/^\s+([A-Za-z0-9_-]+\.md)\s+-\s+(.*)$/);
  if (match) {
  descriptions.set(match[1], match[2].trim());
  }

@@ -53,13 +53,20 @@ If you use the `skill-creator` skill, you can:
 
 - Standard Markdown editing is sufficient.
 - If you add or rename reference files, the README structure is auto-synced via GitHub Actions.
+- For same-repo PRs, `.github/workflows/sync-readme-references.yml` may commit and push the README sync change to your branch automatically.
 
 ## Validation and Packaging
 
-Run:
+Run (replace `<path-to-skill-creator>` with your local install path):
 
 ```bash
-python3 /Users/avanderlee/.cursor/skills/skill-creator/scripts/package_skill.py ./swift-testing-expert ./dist
+python3 <path-to-skill-creator>/scripts/package_skill.py ./swift-testing-expert ./dist
+```
+
+Example on many Cursor setups:
+
+```bash
+python3 ~/.cursor/skills/skill-creator/scripts/package_skill.py ./swift-testing-expert ./dist
 ```
 
 The script validates structure/frontmatter and creates a distributable `.skill` file.
