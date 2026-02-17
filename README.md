@@ -50,17 +50,17 @@ To automatically provide this Skill to everyone working in a repository, configu
 
 ```json
 {
- "enabledPlugins": {
- "swift-testing-expert@swift-testing-agent-skill": true
- },
- "extraKnownMarketplaces": {
- "swift-testing-agent-skill": {
- "source": {
- "source": "github",
- "repo": "AvdLee/Swift-Testing-Agent-Skill"
- }
- }
- }
+  "enabledPlugins": {
+    "swift-testing-expert@swift-testing-agent-skill": true
+  },
+  "extraKnownMarketplaces": {
+    "swift-testing-agent-skill": {
+      "source": {
+        "source": "github",
+        "repo": "AvdLee/Swift-Testing-Agent-Skill"
+      }
+    }
+  }
 }
 ```
 
@@ -124,18 +124,18 @@ This skill gives your AI coding tool practical Swift Testing guidance. It can:
 <!-- references-structure:start -->
 ```text
 swift-testing-expert/
- SKILL.md
- references/
- _index.md
- async-testing-and-waiting.md - Async waiting, continuations, and callback-event testing
- expectations.md - #expect, #require, throw checks, and known issues
- fundamentals.md - @Test, suites, structure, and naming patterns
- migration-from-xctest.md - Incremental XCTest coexistence and migration strategy
- parallelization-and-isolation.md - Parallel defaults, randomized order, and .serialized usage
- parameterized-testing.md - Single/multi-argument tests, zip pairing, and scaling
- performance-and-best-practices.md - High-signal testing defaults for speed, determinism, and flakiness prevention
- traits-and-tags.md - Traits, tags, conditions, bug links, and test-plan filtering
- xcode-workflows.md - Test navigator/report workflows and diagnostics practices
+  SKILL.md
+  references/
+    _index.md
+    async-testing-and-waiting.md - Async waiting, continuations, and callback-event testing
+    expectations.md - #expect, #require, throw checks, and known issues
+    fundamentals.md - @Test, suites, structure, and naming patterns
+    migration-from-xctest.md - Incremental XCTest coexistence and migration strategy
+    parallelization-and-isolation.md - Parallel defaults, randomized order, and .serialized usage
+    parameterized-testing.md - Single/multi-argument tests, zip pairing, and scaling
+    performance-and-best-practices.md - High-signal testing defaults for speed, determinism, and flakiness prevention
+    traits-and-tags.md - Traits, tags, conditions, bug links, and test-plan filtering
+    xcode-workflows.md - Test navigator/report workflows and diagnostics practices
 ```
 <!-- references-structure:end -->
 
