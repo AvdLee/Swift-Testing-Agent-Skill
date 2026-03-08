@@ -165,24 +165,29 @@ func cook(_ ingredient: Ingredient, into dish: Dish) {
 }
 ```
 
-Use `KeyValuePairs` if the key type is not `Hashable`.
-
 ### Fixed-size `zip` with `InlineArray` (Swift 6.2+)
 
-Enforces equal-length arrays at compile time via a generic length parameter.
+A custom `zip` overload for `InlineArray` enforces equal-length arrays at compile time via a generic length parameter. This is not part of the standard library — you must define the helper yourself.
 
 ```swift
+import Testing
+
+// Custom helper: `zip` for two `InlineArray` values of the same length.
 func zip<let N: Int, A, B>(
   _ a: InlineArray<N, A>,
   _ b: InlineArray<N, B>
-) -> Zip2Sequence<[A], [B]>
+) -> Zip2Sequence<[A], [B]> {
+  zip(Array(a), Array(b))
+}
 
-// ❌ Compile error if lengths differ — catches the problem early
+// ✅ Compile error if lengths differ — enforced at compile time
 @Test(arguments: zip(
-  [Ingredient.rice, .potato],
-  [Dish.onigiri]           // 🛑 Error: expected 2 elements
+  InlineArray<2, Ingredient>(.rice, .potato),
+  InlineArray<2, Dish>(.onigiri, .curry)
 ))
-func cook(_ ingredient: Ingredient, into dish: Dish) { ... }
+func cook(_ ingredient: Ingredient, into dish: Dish) {
+  #expect(cook(ingredient) == dish)
+}
 ```
 
 ## Naming and output quality
@@ -239,7 +244,7 @@ func dayLabel(day: Day, expected: String) {
 }
 ```
 
-- **Control flow in test bodies**: `if`/`switch` inside a parameterized test body mirrors implementation logic. Tests that branch the same way as production code verify themselves rather than the behaviour independently.
+- **Control flow in test bodies**: `if`/`switch` inside a parameterized test body mirrors implementation logic. Tests that branch the same way as production code verify themselves rather than the behavior independently.
 
 ```swift
 // ❌ Mirrors implementation — not independent verification.
@@ -272,7 +277,7 @@ func standardGreeting(day: Day) {
 
 - Repetitive tests are consolidated into one parameterized test.
 - Arguments reflect domain vocabulary and produce readable failures.
-- `zip` is used where pairwise matching is required, with equal-length explicit arrays.
+- Paired inputs are modeled as arrays of tuples or dictionaries; use `zip` with equal-length explicit arrays only when the inputs must remain as separate collections.
 - Paired inputs use tuples or dictionaries rather than `zip(allCases, allCases)`.
 - `#expect` uses concrete literal expectations, not values derived from the input itself.
 - No `if`/`switch` branching inside parameterized test bodies.
