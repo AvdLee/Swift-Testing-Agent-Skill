@@ -55,6 +55,12 @@ If you use the `skill-creator` skill, you can:
 - If you add or rename reference files, the README structure is auto-synced via GitHub Actions.
 - For same-repo PRs, `.github/workflows/sync-readme-references.yml` may commit and push the README sync change to your branch automatically.
 
+## Release Notes
+
+- Marketplace and plugin versions are stored in `.claude-plugin/marketplace.json` and `.claude-plugin/plugin.json`.
+- The `Release` workflow bumps those files and tags the release from `main`.
+- If users report seeing an older plugin version after a release, ask them to refresh the marketplace with `/plugin marketplace update swift-testing-agent-skill` before reinstalling or updating the Skill.
+
 ## Validation and Packaging
 
 Run (replace `<path-to-skill-creator>` with your local install path):

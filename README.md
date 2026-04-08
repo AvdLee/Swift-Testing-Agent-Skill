@@ -45,6 +45,15 @@ To install this Skill for your personal use in Claude Code:
 /plugin install swift-testing-expert@swift-testing-agent-skill
 ```
 
+#### Updating After a Release
+If Claude Code still shows an older version after a new GitHub release, refresh the marketplace before reinstalling or updating the Skill:
+
+```bash
+/plugin marketplace update swift-testing-agent-skill
+```
+
+Claude Code reads available plugin versions from your local marketplace copy, so updating the marketplace is what pulls the latest `.claude-plugin/marketplace.json`.
+
 #### Project Configuration
 To automatically provide this Skill to everyone working in a repository, configure the repository's `.claude/settings.json`:
 
