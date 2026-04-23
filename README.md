@@ -75,7 +75,16 @@ To automatically provide this Skill to everyone working in a repository, configu
 
 When team members open the project, Claude Code will prompt them to install the Skill.
 
-### Option C: Manual install
+### Option C: Using pi package manager
+
+Install via [pi](https://github.com/badlogic/pi-mono):
+```bash
+pi install https://github.com/AvdLee/Swift-Testing-Agent-Skill
+```
+
+The skill will be available automatically in pi sessions.
+
+### Option D: Manual install
 1) **Clone** this repository.  
 2) **Install or symlink** the `swift-testing-expert/` folder following your tool's official skills installation docs (see links below).  
 3) **Use your AI tool** as usual and ask it to use the "swift-testing-expert" skill for Swift Testing tasks.
