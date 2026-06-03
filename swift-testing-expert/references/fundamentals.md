@@ -126,10 +126,32 @@ struct PushTests {
 }
 ```
 
+## Cancelling a test early (Swift 6.3+)
+
+- `try Test.cancel()` ends the current test immediately without recording a failure. Use it when a test cannot meaningfully continue but hasn't actually failed (an environment precondition is genuinely unavailable rather than wrong).
+- Prefer `try #require(...)` or a `.disabled`/`.enabled(if:)` trait when the condition is known *before* the test body runs — `Test.cancel()` is for conditions only discoverable mid-test.
+- It is not a substitute for an assertion: a cancelled test neither passes-with-coverage nor fails. Don't use it to paper over a real failure.
+
+### Example: bail out when a runtime resource is absent
+
+```swift
+import Testing
+
+@Test func uploadsToStagingBucket() async throws {
+ guard let bucket = await StagingBucket.current() else {
+ try Test.cancel("Staging bucket not provisioned in this environment")
+ }
+
+ let receipt = try await bucket.upload(sampleFile)
+ #expect(receipt.isConfirmed)
+}
+```
+
 ## Do / Don't
 
 - Do keep each test focused on one behavior.
 - Do use display names where they improve failure readability.
+- Do prefer `.disabled`/`#require` over `Test.cancel()` when the skip condition is known up front.
 - Don't rely on test execution order.
 - Don't annotate suites with `@available`; annotate test functions instead.
 
