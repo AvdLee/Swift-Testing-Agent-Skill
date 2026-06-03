@@ -104,6 +104,28 @@ import Testing
 }
 ```
 
+## Issue severity (Swift 6.3+)
+
+- `Issue.record(_:severity:)` accepts a `severity:` parameter. Use `.warning` to record a non-fatal issue that surfaces in the report **without failing the test**; the default remains `.error`.
+- Reach for `.warning` when you want to flag a soft problem (deprecated path hit, recoverable degradation) while still letting the test pass.
+- Don't downgrade a genuine correctness failure to `.warning` just to keep the suite green — that hides regressions.
+
+### Example: non-failing diagnostic
+
+```swift
+import Testing
+
+@Test func parsesLegacyPayload() throws {
+ let result = try parse(legacyPayload)
+
+ if result.usedFallbackDecoder {
+ Issue.record("Fell back to the legacy decoder", severity: .warning) // recorded, test still passes
+ }
+
+ #expect(result.items.count == 3)
+}
+```
+
 ## Readability upgrade
 
 - Conform complex domain types to `CustomTestStringConvertible` for concise test output.
