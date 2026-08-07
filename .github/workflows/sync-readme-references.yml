@@ -3,7 +3,7 @@ name: Sync README reference structure
 on:
   pull_request:
     paths:
-      - "swift-testing-expert/references/**"
+      - "skills/swift-testing-expert/references/**"
 
 jobs:
   sync-readme:

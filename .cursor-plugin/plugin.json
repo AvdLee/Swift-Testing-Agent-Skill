@@ -6,8 +6,10 @@
     "name": "Antoine van der Lee",
     "email": "contact@avanderlee.com"
   },
+  "homepage": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
   "repository": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
   "license": "MIT",
+  "logo": "skills/swift-testing-expert/assets/logo.png",
   "keywords": [
     "swift",
     "swift-testing",
@@ -25,6 +27,6 @@
     "apple"
   ],
   "skills": [
-    "./skills/swift-testing-expert"
+    "skills/swift-testing-expert"
   ]
 }
