@@ -33,7 +33,7 @@ const referenceFiles = fs
 
 const lines = [];
 lines.push("```text");
-lines.push("swift-testing-expert/");
+lines.push("skills/swift-testing-expert/");
 lines.push(" SKILL.md");
 lines.push(" references/");
 

@@ -4,6 +4,8 @@ Expert guidance for any AI coding tool that supports the [Agent Skills open form
 
 This repository distills practical Swift Testing best practices into actionable, concise references for agents and code review workflows.
 
+This repository is packaged as a portable [Agent Plugin](https://agent-plugins.org) (spec 1.0.0): compatible clients discover the skill automatically from the root `plugin.json` manifest and the `skills/` directory. Client-specific manifests for Claude Code, Cursor, Codex, and pi are included as well.
+
 ## Who this is for
 - Teams adopting Swift Testing who want quick, correct defaults
 - Developers migrating existing XCTest suites incrementally
@@ -75,10 +77,16 @@ To automatically provide this Skill to everyone working in a repository, configu
 
 When team members open the project, Claude Code will prompt them to install the Skill.
 
-### Option C: Manual install
+### Option C: Cursor Plugin
+
+Load the plugin from a local clone by placing it in `~/.cursor/plugins/local`, or install it from the Cursor Marketplace once listed. Cursor supports both the portable Agent Plugins manifest (`plugin.json`) and the Cursor Plugin manifest (`.cursor-plugin/plugin.json`) included in this repository.
+
+### Option D: Manual install
 1) **Clone** this repository.  
-2) **Install or symlink** the `swift-testing-expert/` folder following your tool's official skills installation docs (see links below).  
+2) **Install or symlink** the `skills/swift-testing-expert/` folder following your tool's official skills installation docs (see links below).  
 3) **Use your AI tool** as usual and ask it to use the "swift-testing-expert" skill for Swift Testing tasks.
+
+> Note: the skill folder moved from the repository root to `skills/swift-testing-expert/` when adopting the Agent Plugins format. A symlink at the old `swift-testing-expert/` path keeps existing local clones and scripts working; it will be removed in the next major version.
 
 #### Where to Save Skills
 Follow your tool's official documentation, here are a few popular ones:
@@ -88,7 +96,7 @@ Follow your tool's official documentation, here are a few popular ones:
 
 **How to verify**:
 
-Your agent should reference the routing/playbook in `swift-testing-expert/SKILL.md` and jump into the relevant file in `swift-testing-expert/references/`.
+Your agent should reference the routing/playbook in `skills/swift-testing-expert/SKILL.md` and jump into the relevant file in `skills/swift-testing-expert/references/`.
 
 ## What This Skill Offers
 
@@ -132,7 +140,7 @@ This skill gives your AI coding tool practical Swift Testing guidance. It can:
 
 <!-- references-structure:start -->
 ```text
-swift-testing-expert/
+skills/swift-testing-expert/
   SKILL.md
   references/
     _index.md

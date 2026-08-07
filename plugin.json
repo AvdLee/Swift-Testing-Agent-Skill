@@ -1,11 +1,14 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "swift-testing-expert",
   "version": "1.3.0",
   "description": "Expert Swift Testing guidance for test structure, #expect/#require usage, traits and tags, parameterized tests, async waiting patterns, parallel execution, and XCTest migration.",
   "author": {
     "name": "Antoine van der Lee",
-    "email": "contact@avanderlee.com"
+    "email": "contact@avanderlee.com",
+    "url": "https://www.avanderlee.com"
   },
+  "homepage": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
   "repository": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
   "license": "MIT",
   "keywords": [
@@ -23,8 +26,5 @@
     "ios",
     "macos",
     "apple"
-  ],
-  "skills": [
-    "./skills/swift-testing-expert"
   ]
 }
