@@ -22,10 +22,12 @@ This repository is packaged as a portable [Agent Plugin](https://agent-plugins.o
 Install this skill with a single command:
 
 ```bash
-npx skills add https://github.com/avdlee/swift-testing-agent-skill --skill swift-testing-expert
+npx skills@latest add https://github.com/avdlee/swift-testing-agent-skill --skill swift-testing-expert
 ```
 
 For more information, visit the [skills.sh platform page](https://skills.sh/avdlee/swift-testing-agent-skill/swift-testing-expert).
+
+> Installed before the Agent Plugins migration? Run `npx skills@latest update` using skills CLI 1.5.24 or newer. It migrates the saved skill path without treating the skill as deleted.
 
 Then use the skill in your AI agent, for example:
 > Use the swift testing skill and review this test target for migration opportunities and flaky parallel behavior.
