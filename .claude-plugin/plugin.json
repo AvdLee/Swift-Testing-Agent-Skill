@@ -1,6 +1,6 @@
 {
   "name": "swift-testing-expert",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Expert Swift Testing guidance for test structure, #expect/#require usage, traits and tags, parameterized tests, async waiting patterns, parallel execution, and XCTest migration.",
   "author": {
     "name": "Antoine van der Lee",
@@ -25,6 +25,6 @@
     "apple"
   ],
   "skills": [
-    "./swift-testing-expert"
+    "./skills/swift-testing-expert"
   ]
 }

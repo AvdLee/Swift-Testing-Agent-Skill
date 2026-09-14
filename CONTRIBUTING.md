@@ -18,7 +18,7 @@ If you use the `skill-creator` skill, you can:
 ## Alternative Workflows
 
 ### Without skill-creator
-- Make changes directly in `SKILL.md` or `swift-testing-expert/references/`
+- Make changes directly in `SKILL.md` or `skills/swift-testing-expert/references/`
 - Keep content concise and focused on Swift Testing
 
 ### Manual edits
@@ -40,7 +40,7 @@ If you use the `skill-creator` skill, you can:
 - Avoid broad IDE/tooling walkthroughs beyond essential workflow context
 - Use modern Swift Testing APIs and flag outdated XCTest-only patterns when relevant
 - Prefer clear, direct language over opinionated phrasing
-- Keep `SKILL.md` concise; place detailed examples in `swift-testing-expert/references/`
+- Keep `SKILL.md` concise; place detailed examples in `skills/swift-testing-expert/references/`
 
 ## Pull Request Process
 

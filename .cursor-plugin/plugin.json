@@ -1,0 +1,32 @@
+{
+  "name": "swift-testing-expert",
+  "version": "1.3.0",
+  "description": "Expert Swift Testing guidance for test structure, #expect/#require usage, traits and tags, parameterized tests, async waiting patterns, parallel execution, and XCTest migration.",
+  "author": {
+    "name": "Antoine van der Lee",
+    "email": "contact@avanderlee.com"
+  },
+  "homepage": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
+  "repository": "https://github.com/AvdLee/Swift-Testing-Agent-Skill",
+  "license": "MIT",
+  "logo": "skills/swift-testing-expert/assets/logo.png",
+  "keywords": [
+    "swift",
+    "swift-testing",
+    "testing",
+    "xctest",
+    "unit-testing",
+    "parameterized-tests",
+    "traits",
+    "tags",
+    "parallel-testing",
+    "async-await",
+    "xcode",
+    "ios",
+    "macos",
+    "apple"
+  ],
+  "skills": [
+    "skills/swift-testing-expert"
+  ]
+}
